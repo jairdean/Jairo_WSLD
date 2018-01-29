@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+<!--CASA SALESIANA -->
     <TextView
         android:id="@+id/lblNC"
         android:layout_width="wrap_content"
@@ -22,6 +22,7 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <!-- DIRECCION CASA SALESIANA -->
     <TextView
         android:id="@+id/lblDir"
         android:layout_width="wrap_content"
@@ -39,6 +40,7 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <!--TELEFONO CASA SALESIANA -->
     <TextView
         android:id="@+id/lblT"
         android:layout_width="wrap_content"
@@ -54,8 +56,9 @@
         android:layout_column="0"
         android:layout_row="5"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
+    <!--DIRECTOR CASA SALESIANA -->
     <TextView
         android:id="@+id/lblDC"
         android:layout_width="wrap_content"
@@ -73,6 +76,7 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <!--NOMBRE CORTO CASA SALESIANA -->
     <TextView
         android:id="@+id/lblNCC"
         android:layout_width="wrap_content"
@@ -86,20 +90,22 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <!--BOTON INGRESAR -->
     <Button
-        android:id="@+id/btnCSingresar"
+        android:id="@+id/btnIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="0"
         android:layout_row="10"
         android:text="@string/ingresar" />
 
+    <!-- BOTON LISTAR -->
     <Button
-        android:id="@+id/btnCSactualizar"
+        android:id="@+id/btnListar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:layout_row="10"
-        android:text="@string/actualizar" />
+        android:text="@string/listar" />
 
 </GridLayout>

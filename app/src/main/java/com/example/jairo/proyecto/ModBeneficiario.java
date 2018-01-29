@@ -79,7 +79,7 @@ public class ModBeneficiario extends AppCompatActivity{
            }
        });
 
-
+        //boton listar
        btnListar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -88,8 +88,7 @@ public class ModBeneficiario extends AppCompatActivity{
 
            }
        });
-    }
-    //end ON CREATE
+    }//end ON CREATE
 
 
 
