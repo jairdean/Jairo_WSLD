@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
 
 
-    }
+    }//fin ON CREATE
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

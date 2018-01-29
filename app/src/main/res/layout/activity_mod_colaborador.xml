@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <!-- spinner 1 -->
     <Spinner
         android:id="@+id/cmb1"
         android:layout_width="match_parent"
@@ -21,6 +21,7 @@
         android:layout_row="1"
         android:text="@string/selCasa" />
 
+    <!-- spinner 2 -->
     <Spinner
         android:id="@+id/cmb2"
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
         android:layout_row="3"
         android:text="@string/selObra" />
 
+    <!-- spinner 3 -->
     <Spinner
         android:id="@+id/cmb3"
         android:layout_width="match_parent"
@@ -52,6 +54,7 @@
         android:text="@string/selLugar" />
 
 
+    <!-- numero colaboradores -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -79,6 +82,7 @@
 
     </RelativeLayout>
 
+    <!-- spinner 4 -->
     <Spinner
         android:id="@+id/cmb4"
         android:layout_width="match_parent"
@@ -90,6 +94,7 @@
         android:layout_height="wrap_content"
         android:text="@string/selTipoColab" />
 
+    <!-- boton ingresar -->
     <Button
         android:id="@+id/btnIngresar"
         android:layout_width="wrap_content"

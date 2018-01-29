@@ -6,6 +6,7 @@
     <string name="ingresar">Ingresar</string>
     <string name="eliminar">Eliminar</string>
     <string name="actualizar">Actualizar</string>
+    <string name="listar">Listar</string>
 
     <string name="Dir">Direccion</string>
     <string name="Tele">Telefono</string>
@@ -30,6 +31,12 @@
         <item>Expense</item>
     </string-array>
 
+    <!-- para Modulo Beneficiario-->
+    <string name="idcasa">id casa</string>
+    <string name="idobra">id obra</string>
+    <string name="idlugar">id lugar</string>
+    <string name="descripcion">descripcion</string>
+    <string name="numBeneficiario">numero beneficiarios</string>
 
     <!-- para Modulo colaboradores-->
     <string name="selCasa">Sleecionar casa</string>
