@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             public void onClick(View v) {
                 //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
                 Intent intent =
-                        new Intent(MainActivity.this, Mod_CasaSalesiana.class);
+                        new Intent(MainActivity.this, ModColaborador.class);
 
                 //Iniciamos la nueva actividad
                 startActivity(intent);

@@ -24,7 +24,8 @@
         <activity
             android:name=".ModBeneficiario"
             android:label="@string/title_activity_mod_beneficiario"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ModColaborador"></activity>
     </application>
 
 </manifest>

@@ -22,18 +22,23 @@ public class ModBeneficiario extends AppCompatActivity{
         lblMensaje = (TextView)findViewById(R.id.LblMensaje);
         cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
 
+        //esta es la lista que se obtendira de la base
         final String[] datos =
                 new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
 
+        //aqui se manda los datos al spinner
         ArrayAdapter<String> adaptador =
                 new ArrayAdapter<String>(this,
                         android.R.layout.simple_spinner_item, datos);
 
+        //spinner carga los datos como recurso
         adaptador.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
 
+        //aqui se pone los datos en el spinner y son vistos por el usuario
         cmbOpciones.setAdapter(adaptador);
 
+        //este es un oyente del tipo que ha seleccionado el usuairo
         cmbOpciones.setOnItemSelectedListener(
                new OnItemSelectedListener() {
                    public void onItemSelected(AdapterView<?> parent,

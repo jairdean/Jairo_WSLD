@@ -20,4 +20,17 @@
         android:layout_row="1"
         android:ems="10"/>
 
+    <!-- SPINNER 1 -->
+
+
+    <!-- SPINNER 2 -->
+
+
+    <!-- SPINNER 3 -->
+
+
+    <!-- EDIT TEXT -->
+
+    <!-- SPINNER 4 -->
+
 </GridLayout>
