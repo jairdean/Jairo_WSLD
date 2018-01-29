@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 public class ModColaborador extends AppCompatActivity {
     private EditText txt1;
-    private Button btnIngresar;
+    private Button btnIngresar,btnListar;
     private Spinner cmb1,cmb2,cmb3,cmb4;
 
     @Override
@@ -21,13 +21,15 @@ public class ModColaborador extends AppCompatActivity {
         //hago una instancia a todas las variables que se crean en la VISTA
         cmb1 = findViewById(R.id.cmb1);
         txt1 = findViewById(R.id.txt1);
-        btnIngresar = findViewById(R.id.btnIngresar);
+
         cmb2 = findViewById(R.id.cmb2);
         cmb3 = findViewById(R.id.cmb3);
         cmb4 = findViewById(R.id.cmb4);
-
+        btnIngresar = findViewById(R.id.btnIngresar);
+        btnListar = findViewById(R.id.btnListar);
 
           //Implementamos el evento click del botón INGRESAR
+        //BOTON INGRESAR
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,6 +38,16 @@ public class ModColaborador extends AppCompatActivity {
 
             }
         });//fin BTN INGRESAR
+
+        //boton listar
+        btnListar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //aqui se pone la accion que haria el boton.
+
+
+            }
+        });//FIN BTN LISTAR
 
     }//fin ONCREATE
 

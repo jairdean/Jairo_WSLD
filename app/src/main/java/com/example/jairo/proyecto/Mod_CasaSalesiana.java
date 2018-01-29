@@ -47,9 +47,9 @@ public class Mod_CasaSalesiana extends AppCompatActivity {
 
 
 
-    }
+    }//fin ON CREATE
 
 
 
 
-}
+}//fin CLASE
