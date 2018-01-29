@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string name="action_settings">Settings</string>
+    <string name="nombre">Escribe tu nombre:</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="actualizar">Actualizar</string>
+
+    <string name="Dir">Direccion</string>
+    <string name="Tele">Telefono</string>
+    <string name="DirectorCasa">Director Casa</string>
+    <string name="NCC">Nombre Corto Casa</string>
+
+    <string name="Beneficiario">Beneficiario</string>
+    <string name="CS">Casa Salesiana</string>
+    <string name="Colaborador">Colaborador</string>
+
+    <string name="Lugar">Lugar</string>
+    <string name="ObraSalesiana">Obra Salesiana</string>
+    <string name="TipoColaborador">Tipo Colaborador</string>
+    <string name="title_activity_mod_beneficiario">ModBeneficiario</string>
+
+
+</resources>

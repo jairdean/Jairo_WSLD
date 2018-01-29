@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/lytContenedor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.jairo.proyecto.MainActivity">
+
+
+<!--
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aceptar" />
+    -->
+
+
+    <Button
+        android:id="@+id/btnBeneficiario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Beneficiario" />
+
+    <Button
+        android:id="@+id/btnCasaSalesiana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CS" />
+
+    <Button
+        android:id="@+id/btnColaborador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Colaborador" />
+
+    <Button
+        android:id="@+id/btnLugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Lugar" />
+
+    <Button
+        android:id="@+id/btnObraSalesiana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ObraSalesiana" />
+
+    <Button
+        android:id="@+id/btnTipoColaborador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TipoColaborador" />
+
+
+</LinearLayout>
