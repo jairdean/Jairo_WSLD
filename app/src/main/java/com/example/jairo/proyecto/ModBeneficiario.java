@@ -19,8 +19,8 @@ public class ModBeneficiario extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_beneficiario);
 
-        lblMensaje = (TextView)findViewById(R.id.LblMensaje);
-        cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
+        lblMensaje = findViewById(R.id.LblMensaje);
+        cmbOpciones = findViewById(R.id.CmbOpciones);
 
         //esta es la lista que se obtendira de la base
         final String[] datos =
@@ -38,7 +38,7 @@ public class ModBeneficiario extends AppCompatActivity{
         //aqui se pone los datos en el spinner y son vistos por el usuario
         cmbOpciones.setAdapter(adaptador);
 
-        //este es un oyente del tipo que ha seleccionado el usuairo
+        //este es un oyente del tipo que ha seleccionado el usuairo cmbOpciones
         cmbOpciones.setOnItemSelectedListener(
                new OnItemSelectedListener() {
                    public void onItemSelected(AdapterView<?> parent,
