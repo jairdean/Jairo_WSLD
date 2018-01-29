@@ -22,4 +22,13 @@
     <string name="title_activity_mod_beneficiario">ModBeneficiario</string>
 
 
+    <string name="lblAcc">Select Account Type</string>
+    <string name="lblSubAcc">Select Account Head</string>
+
+    <string-array name="acc_type">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
+
 </resources>

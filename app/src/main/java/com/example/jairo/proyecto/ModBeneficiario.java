@@ -3,11 +3,12 @@ package com.example.jairo.proyecto;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class ModBeneficiario extends AppCompatActivity {
+public class ModBeneficiario extends AppCompatActivity{
 
     private TextView lblMensaje;
     private Spinner cmbOpciones;
@@ -34,7 +35,7 @@ public class ModBeneficiario extends AppCompatActivity {
         cmbOpciones.setAdapter(adaptador);
 
         cmbOpciones.setOnItemSelectedListener(
-               new AdapterView.OnItemSelectedListener() {
+               new OnItemSelectedListener() {
                    public void onItemSelected(AdapterView<?> parent,
                                               android.view.View v, int position, long id) {
                        lblMensaje.setText("Seleccionado: " +
@@ -42,12 +43,17 @@ public class ModBeneficiario extends AppCompatActivity {
                    }
 
                    public void onNothingSelected(AdapterView<?> parent) {
-                       lblMensaje.setText("");
+                       lblMensaje.setText("Seleccione una opcion");
                    }
                });
 
 
     }
+    //end ON CREATE
+
+
+
+
 
 
 
