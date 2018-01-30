@@ -62,5 +62,7 @@
     <string name="pagWebObra">pagina web obra</string>
     <string name="nombreCortoObra">nombre corto obra</string>
 
+    <!-- para Modulo Tipo colaborador -->
+    <string name="descTipoColab">descripcion tipo colaborador</string>
 
 </resources>

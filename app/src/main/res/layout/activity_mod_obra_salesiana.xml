@@ -53,7 +53,7 @@
         android:layout_column="0"
         android:layout_row="5"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <!-- TEXTO 2 -->
     <TextView
@@ -71,7 +71,7 @@
         android:layout_column="0"
         android:layout_row="7"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
 
     <!-- TEXTO 3 -->
@@ -90,7 +90,7 @@
         android:layout_column="0"
         android:layout_row="9"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <!-- TEXTO 4 -->
     <TextView
@@ -126,7 +126,7 @@
         android:layout_column="0"
         android:layout_row="13"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <!-- TEXTO 6 -->
     <TextView
@@ -144,7 +144,7 @@
         android:layout_column="0"
         android:layout_row="15"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
 
     <!-- TEXTO 7 -->
@@ -163,7 +163,7 @@
         android:layout_column="0"
         android:layout_row="17"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <!-- TEXTO BOTON INSERTAR -->
     <Button
