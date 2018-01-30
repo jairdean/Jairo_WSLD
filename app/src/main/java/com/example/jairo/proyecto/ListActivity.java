@@ -7,7 +7,13 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class ListActivity extends AppCompatActivity {
-    private String LISTARDATOSDE;
+    private String LISTARDATOSDE,
+            ClaseBeneficiario="ModBeneficiario",
+            ClaseCasaSalesiana="Mod_CasaSalesiana",
+            ClaseColaborador="ModColaborador",
+            ClaseLugar="ModLugar",
+            ClaseObraSalesiana="ModObraSalesiana",
+            ClaseTipoColaborador="ModTipoColaborador";
     private TableLayout myData;
 
     @Override
@@ -15,16 +21,39 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+
         //Recuperamos la información pasada en el intent
         Bundle bundle = this.getIntent().getExtras();
-
         //Construimos el mensaje a mostrar
-        LISTARDATOSDE=bundle.getString("LISTARDATOSDE");
+        LISTARDATOSDE=bundle.getString("LISTARDATOSDE");//esta sera la variable del boton listar y sabre cual esta llamando
 
-
-                    myData = findViewById(R.id.lytJairoLista);
+        //sirve para estableces la tabla de datos a la ventana lytJairoLista
+        myData = findViewById(R.id.lytJairoLista);
         myData.setStretchAllColumns(true);
         myData.bringToFront();
+        switch (LISTARDATOSDE){
+            case "ModBeneficiario":
+
+                break;
+            case "Mod_CasaSalesiana":
+
+            break;
+            case "ModColaborador":
+
+            break;
+            case "ModLugar":
+
+            break;
+            case "ModObraSalesiana":
+
+            break;
+            case "ModTipoColaborador":
+
+            break;
+                default:
+
+                    break;
+        }
         int i=0;
         for( i= 0; i < 3; i++){
             //crea la fila
