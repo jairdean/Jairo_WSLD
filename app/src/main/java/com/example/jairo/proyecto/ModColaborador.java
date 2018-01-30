@@ -45,6 +45,9 @@ public class ModColaborador extends AppCompatActivity {
                 //AQUI VA EL CODIGO PARA INGRESAR LA INFORMACION
 
 
+
+                //este de ley va al final porque se llama a la lista para ver el nuevo dato ingresado
+                invocar_lista();
             }
         });//fin BTN INGRESAR
 
@@ -53,24 +56,22 @@ public class ModColaborador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //aqui se pone la accion que haria el boton.
-//Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
-                Intent intent =
-                        new Intent(ModColaborador.this, ListActivity.class);
-
-                //indico con una variable el nombre de la lista que quiero ver
-                //Creamos la información a pasar entre actividades
-                Bundle b = new Bundle();
-                b.putString("LISTARDATOSDE", "ModColaborador");
-
-                //Añadimos la información al intent
-                intent.putExtras(b);
-
-                //Iniciamos la nueva actividad
-                startActivity(intent);
-
+                invocar_lista();
             }
         });//FIN BTN LISTAR
 
     }//fin ONCREATE
 
+    private void invocar_lista(){
+        //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+        Intent intent = new Intent(ModColaborador.this, ListActivity.class);
+        //indico con una variable el nombre de la lista que quiero ver
+        //Creamos la información a pasar entre actividades
+        Bundle b = new Bundle();
+        b.putString("LISTARDATOSDE", "ModColaborador");
+        //Añadimos la información al intent
+        intent.putExtras(b);
+        //Iniciamos la nueva actividad
+        startActivity(intent);
+    }
 }//fin clase

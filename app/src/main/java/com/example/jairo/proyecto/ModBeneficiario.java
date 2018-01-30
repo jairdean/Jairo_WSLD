@@ -81,6 +81,8 @@ public class ModBeneficiario extends AppCompatActivity{
                //aqui se pone la accion que haria el boton.
 
 
+               //este de ley va al final porque se llama a la lista para ver el nuevo dato ingresado
+               invocar_lista();
            }
        });
 
@@ -89,27 +91,24 @@ public class ModBeneficiario extends AppCompatActivity{
            @Override
            public void onClick(View v) {
                //aqui se pone la accion que haria el boton.
-               //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
-               Intent intent =
-                       new Intent(ModBeneficiario.this, ListActivity.class);
-
-               //indico con una variable el nombre de la lista que quiero ver
-               //Creamos la información a pasar entre actividades
-               Bundle b = new Bundle();
-               b.putString("LISTARDATOSDE", "ModBeneficiario");
-
-               //Añadimos la información al intent
-               intent.putExtras(b);
-
-               //Iniciamos la nueva actividad
-               startActivity(intent);
-
+               invocar_lista();
            }
        });
     }//end ON CREATE
 
 
-
+private void invocar_lista(){
+    //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+    Intent intent = new Intent(ModBeneficiario.this, ListActivity.class);
+    //indico con una variable el nombre de la lista que quiero ver
+    //Creamos la información a pasar entre actividades
+    Bundle b = new Bundle();
+    b.putString("LISTARDATOSDE", "ModBeneficiario");
+    //Añadimos la información al intent
+    intent.putExtras(b);
+    //Iniciamos la nueva actividad
+    startActivity(intent);
+}
 
 
 
