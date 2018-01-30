@@ -29,7 +29,7 @@
         <activity android:name=".ModLugar" />
         <activity android:name=".ModObraSalesiana" />
         <activity android:name=".ModTipoColaborador" />
-        <activity android:name=".List_CasaSalesiana"></activity>
+        <activity android:name=".ListActivity"></activity>
     </application>
 
 </manifest>

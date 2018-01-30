@@ -2,24 +2,22 @@ package com.example.jairo.proyecto;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
-public class Modulo1 extends AppCompatActivity {
-    private TextView txtSaludo;
+public class ListActivity extends AppCompatActivity {
+    private String LISTARDATOSDE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modulo1);
+        setContentView(R.layout.activity_list);
 
-
-        //Localizar los controles
-        txtSaludo = findViewById(R.id.txtSaludo);
 
         //Recuperamos la información pasada en el intent
         Bundle bundle = this.getIntent().getExtras();
 
         //Construimos el mensaje a mostrar
-        txtSaludo.setText("Hola " + bundle.getString("PASO_NOMBRE"));
+        LISTARDATOSDE=bundle.getString("LISTARDATOSDE");
+
+
     }
 }
