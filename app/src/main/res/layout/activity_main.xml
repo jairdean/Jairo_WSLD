@@ -28,37 +28,42 @@
             android:text="@string/aceptar" />
     -->
 
-
+<!-- BOTON BENEFICIARIO-->
     <Button
         android:id="@+id/btnBeneficiario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Beneficiario" />
 
+    <!-- BOTON CASA SALESIANA-->
     <Button
         android:id="@+id/btnCasaSalesiana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/CS" />
 
+    <!-- BOTON COLABORADOR-->
     <Button
         android:id="@+id/btnColaborador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Colaborador" />
 
+    <!-- BOTON LUGAR-->
     <Button
         android:id="@+id/btnLugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Lugar" />
 
+    <!-- BOTON OBRA SALESIANA-->
     <Button
         android:id="@+id/btnObraSalesiana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ObraSalesiana" />
 
+    <!-- BOTON TIPO COLABORADOR-->
     <Button
         android:id="@+id/btnTipoColaborador"
         android:layout_width="match_parent"

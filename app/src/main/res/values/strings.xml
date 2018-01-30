@@ -45,6 +45,12 @@
     <string name="selNumColab">Numero de colaboradores</string>
     <string name="selTipoColab">Tipo de colaborador</string>
 
+    <!-- para Modulo Lugar -->
+    <string name="nombreLugar">Nombre del lugar</string>
+    <string name="descripcionLugar">Descripcion del lugar</string>
+    <string name="responsableLugar">Responsable del lugar</string>
+    <string name="direccionLugar">Direccion del lugar</string>
+    <string name="telefonoLugar">Telefono del lugar</string>
 
 
 </resources>

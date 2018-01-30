@@ -25,16 +25,21 @@ public class ModBeneficiario extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_beneficiario);
 
+       cmbOpciones = findViewById(R.id.CmbOpciones);
         lblMensaje = findViewById(R.id.LblMensaje);
-       textView1 = findViewById(R.id.textView1);
-       textView2 = findViewById(R.id.textView2);
-       textView3 = findViewById(R.id.textView3);
-        cmbOpciones = findViewById(R.id.CmbOpciones);
+
         cmb1 = findViewById(R.id.cmb1);//id casa
+       textView1 = findViewById(R.id.textView1);
+
         cmb2 = findViewById(R.id.cmb2);//id obra
+       textView2 = findViewById(R.id.textView2);
+
         cmb3 = findViewById(R.id.cmb3);//id lugar
+       textView3 = findViewById(R.id.textView3);
+
        txt1 = findViewById(R.id.txt1);//descripcion
        txt2 = findViewById(R.id.txt2);//numero de beneficiarios
+
        btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar
        btnListar = findViewById(R.id.btnListar);//boton listar
 

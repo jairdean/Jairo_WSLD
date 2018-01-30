@@ -21,11 +21,11 @@
         </activity>
         <activity android:name=".Modulo1" />
         <activity android:name=".Mod_CasaSalesiana" />
-        <activity
-            android:name=".ModBeneficiario"
+        <activity android:name=".ModBeneficiario"
             android:label="@string/title_activity_mod_beneficiario"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ModColaborador"></activity>
+        <activity android:name=".ModColaborador" />
+        <activity android:name=".ModLugar"></activity>
     </application>
 
 </manifest>
