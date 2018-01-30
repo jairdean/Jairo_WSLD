@@ -13,10 +13,8 @@ import android.widget.EditText;
 import android.content.Intent;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener{
     private EditText txtNombre;
@@ -148,9 +146,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         });
 */
 
-
-
-
     }//fin ON CREATE
 
     @Override
@@ -212,4 +207,4 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     }
 
 
-}
+}//FIN DE LA CLASE
