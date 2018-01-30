@@ -1,116 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+    <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lytactivity_mod_colaborador"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!-- spinner 1 -->
-    <Spinner
-        android:id="@+id/cmb1"
+    android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:text="@string/selCasa" />
-
-    <!-- spinner 2 -->
-    <Spinner
-        android:id="@+id/cmb2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="3"
-        android:text="@string/selObra" />
-
-    <!-- spinner 3 -->
-    <Spinner
-        android:id="@+id/cmb3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="4" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="5"
-        android:text="@string/selLugar" />
-
-
-    <!-- numero colaboradores -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="@string/selNumColab"
-            tools:layout_editor_absoluteY="128dp" />
-
-        <EditText
-            android:id="@+id/txt1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView4"
-            android:ems="10"
-            android:inputType="number"
-            tools:layout_editor_absoluteY="639dp" />
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <GridLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/lytactivity_mod_colaborador"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <!-- spinner 4 -->
-    <Spinner
-        android:id="@+id/cmb4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <!-- spinner 1 -->
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/selTipoColab" />
+                <Spinner
+                    android:id="@+id/cmb1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-    <!-- boton ingresar -->
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="9"
-        android:text="@string/ingresar"/>
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:text="@string/selCasa" />
 
-    <Button
-        android:id="@+id/btnListar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="10"
-        android:text="@string/listar" />
+                <!-- spinner 2 -->
+                <Spinner
+                    android:id="@+id/cmb2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2" />
 
-    <!-- boton listar -->
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:text="@string/selObra" />
 
-</GridLayout>
+                <!-- spinner 3 -->
+                <Spinner
+                    android:id="@+id/cmb3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="4" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:text="@string/selLugar" />
+
+
+                <!-- numero colaboradores -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/selNumColab"
+                        tools:layout_editor_absoluteY="128dp" />
+
+                    <EditText
+                        android:id="@+id/txt1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView4"
+                        android:ems="10"
+                        android:inputType="number"
+                        tools:layout_editor_absoluteY="639dp" />
+
+                </RelativeLayout>
+
+                <!-- spinner 4 -->
+                <Spinner
+                    android:id="@+id/cmb4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selTipoColab" />
+
+                <!-- boton ingresar -->
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="9"
+                    android:text="@string/ingresar"/>
+
+                <Button
+                    android:id="@+id/btnListar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="10"
+                    android:text="@string/listar" />
+
+                <!-- boton listar -->
+
+            </GridLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>

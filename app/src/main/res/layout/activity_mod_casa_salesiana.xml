@@ -1,111 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/lytactivity_mod_casa_salesiana"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_alignParentBottom="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--CASA SALESIANA -->
-    <TextView
-        android:id="@+id/lblNC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/CS"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:ems="10"
-        android:inputType="textPersonName" />
+            <GridLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/lytactivity_mod_casa_salesiana"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <!-- DIRECCION CASA SALESIANA -->
-    <TextView
-        android:id="@+id/lblDir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="2"
-        android:text="@string/Dir" />
+            <!--CASA SALESIANA -->
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="3"
-        android:ems="10"
-        android:inputType="textPersonName" />
+                <TextView
+                    android:id="@+id/lblNC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CS"/>
 
-    <!--TELEFONO CASA SALESIANA -->
-    <TextView
-        android:id="@+id/lblT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="4"
-        android:text="@string/Tele" />
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="5"
-        android:ems="10"
-        android:inputType="number" />
+                <!-- DIRECCION CASA SALESIANA -->
+                <TextView
+                    android:id="@+id/lblDir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:text="@string/Dir" />
 
-    <!--DIRECTOR CASA SALESIANA -->
-    <TextView
-        android:id="@+id/lblDC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="6"
-        android:text="@string/DirectorCasa" />
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="7"
-        android:ems="10"
-        android:inputType="textPersonName" />
+                <!--TELEFONO CASA SALESIANA -->
+                <TextView
+                    android:id="@+id/lblT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="4"
+                    android:text="@string/Tele" />
 
-    <!--NOMBRE CORTO CASA SALESIANA -->
-    <TextView
-        android:id="@+id/lblNCC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/NCC" />
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:ems="10"
+                    android:inputType="number" />
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+                <!--DIRECTOR CASA SALESIANA -->
+                <TextView
+                    android:id="@+id/lblDC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="6"
+                    android:text="@string/DirectorCasa" />
 
-    <!--BOTON INGRESAR -->
-    <Button
-        android:id="@+id/btnIngresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="0"
-        android:layout_row="10"
-        android:text="@string/ingresar" />
+                <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="7"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
 
-    <!-- BOTON LISTAR -->
-    <Button
-        android:id="@+id/btnListar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="1"
-        android:layout_row="10"
-        android:text="@string/listar" />
+                <!--NOMBRE CORTO CASA SALESIANA -->
+                <TextView
+                    android:id="@+id/lblNCC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/NCC" />
 
-</GridLayout>
+                <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <!--BOTON INGRESAR -->
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="10"
+                    android:text="@string/ingresar" />
+
+                <!-- BOTON LISTAR -->
+                <Button
+                    android:id="@+id/btnListar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="10"
+                    android:text="@string/listar" />
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
