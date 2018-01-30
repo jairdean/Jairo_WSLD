@@ -53,7 +53,20 @@ public class ModColaborador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //aqui se pone la accion que haria el boton.
+//Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+                Intent intent =
+                        new Intent(ModColaborador.this, ListActivity.class);
 
+                //indico con una variable el nombre de la lista que quiero ver
+                //Creamos la información a pasar entre actividades
+                Bundle b = new Bundle();
+                b.putString("LISTARDATOSDE", "ModColaborador");
+
+                //Añadimos la información al intent
+                intent.putExtras(b);
+
+                //Iniciamos la nueva actividad
+                startActivity(intent);
 
             }
         });//FIN BTN LISTAR
