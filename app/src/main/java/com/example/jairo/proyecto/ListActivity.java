@@ -34,7 +34,7 @@ public class ListActivity extends AppCompatActivity {
         switch (LISTARDATOSDE){
             case "ModBeneficiario":
                 int i=0;
-                for( i= 0; i < 3; i++){
+                for( i= 0; i < 20; i++){
                     //crea la fila
                     TableRow tr =  new TableRow(this);
                     //obtener los datos de la BASE

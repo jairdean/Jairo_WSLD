@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 <TableLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
 android:id="@+id/lytJairoLista"
 android:layout_width="match_parent"
  android:layout_height="match_parent"
 android:shrinkColumns="*"
- android:stretchColumns="*"
-android:background="#ffffff">
+ android:stretchColumns="*">
 
 <!-- AQUI SE DESPLIEGA LAS TABLAS DE TODOS LOS MODULOS DE FORMA DINAMICA-->
 
 </TableLayout>
+
+
+    </LinearLayout>
+</ScrollView>
