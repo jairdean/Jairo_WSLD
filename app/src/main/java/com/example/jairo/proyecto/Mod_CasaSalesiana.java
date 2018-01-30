@@ -1,5 +1,6 @@
 package com.example.jairo.proyecto;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,12 @@ public class Mod_CasaSalesiana extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //aqui se pone la accion que haria el boton.
+                //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+                Intent intent =
+                        new Intent(Mod_CasaSalesiana.this, List_CasaSalesiana.class);
 
+                //Iniciamos la nueva actividad
+                startActivity(intent);
 
             }
         });
