@@ -21,17 +21,17 @@ public class ModLugar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_lugar);
 
-        cmb1 = findViewById(R.id.cmb1);
+        cmb1 = findViewById(R.id.cmb1);//cmb1 id casa
         textView1 = findViewById(R.id.textView1);
 
-        cmb2 = findViewById(R.id.cmb2);
+        cmb2 = findViewById(R.id.cmb2);//cmb2 id obra
         textView2 = findViewById(R.id.textView2);
 
-        txt1 = findViewById(R.id.txt1);
-        txt2 = findViewById(R.id.txt2);
-        txt3 = findViewById(R.id.txt3);
-        txt4 = findViewById(R.id.txt4);
-        txt5 = findViewById(R.id.txt5);
+        txt1 = findViewById(R.id.txt1);//nombre del lugar
+        txt2 = findViewById(R.id.txt2);//descripcion del lugar
+        txt3 = findViewById(R.id.txt3);//responsable del lugar
+        txt4 = findViewById(R.id.txt4);//direccion del lugar
+        txt5 = findViewById(R.id.txt5);//telefono del lugar
 
         btnIngresar = findViewById(R.id.btnIngresar);
         btnListar = findViewById(R.id.btnListar);

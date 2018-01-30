@@ -21,19 +21,19 @@ public class ModObraSalesiana extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_obra_salesiana);
 
-        cmb1= findViewById(R.id.cmb1);
+        cmb1= findViewById(R.id.cmb1);//cmb1 id casa
         textView1= findViewById(R.id.textView1);
 
-        cmb2= findViewById(R.id.cmb2);
+        cmb2= findViewById(R.id.cmb2);//cmb2 id tipo obra
         textView2= findViewById(R.id.textView2);
 
-        txt1=findViewById(R.id.txt1);
-        txt2=findViewById(R.id.txt2);
-        txt3=findViewById(R.id.txt3);
-        txt4=findViewById(R.id.txt4);
-        txt5=findViewById(R.id.txt5);
-        txt6=findViewById(R.id.txt6);
-        txt7=findViewById(R.id.txt7);
+        txt1=findViewById(R.id.txt1);//denominacion obra
+        txt2=findViewById(R.id.txt2);//campo servicio obra
+        txt3=findViewById(R.id.txt3);//productos obra
+        txt4=findViewById(R.id.txt4);//10:00 a 15:00
+        txt5=findViewById(R.id.txt5);//informacion obra
+        txt6=findViewById(R.id.txt6);//pagina web obra
+        txt7=findViewById(R.id.txt7);//nombre corto obra
 
 
         btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar

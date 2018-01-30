@@ -9,18 +9,19 @@ import android.widget.EditText;
 
 public class Mod_CasaSalesiana extends AppCompatActivity {
 
-    private EditText editText4,editText5,editText6,editText7,editText8;
+    private EditText txt4,txt5,txt6,txt7,txt8;
     private Button btnIngresar,btnListar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_casa_salesiana);
 
-        editText4 = findViewById(R.id.editText4);
-        editText5= findViewById(R.id.editText5);
-        editText6= findViewById(R.id.editText6);
-        editText7= findViewById(R.id.editText7);
-        editText8= findViewById(R.id.editText8);
+        txt4 = findViewById(R.id.editText4);//casa salesiana
+        txt5= findViewById(R.id.editText5);//direccion
+        txt6= findViewById(R.id.editText6);//telefono
+        txt7= findViewById(R.id.editText7);//director
+        txt8= findViewById(R.id.editText8);//nombre casa CORTO
+
         btnIngresar= findViewById(R.id.btnIngresar);
         btnListar= findViewById(R.id.btnListar);
 

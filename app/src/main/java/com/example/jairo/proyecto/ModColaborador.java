@@ -21,16 +21,16 @@ public class ModColaborador extends AppCompatActivity {
         setContentView(R.layout.activity_mod_colaborador);
 
         //hago una instancia a todas las variables que se crean en la VISTA
-        cmb1 = findViewById(R.id.cmb1);
+        cmb1 = findViewById(R.id.cmb1);//cmb1 seleccionar casa
         textView1 = findViewById(R.id.textView1);
-        cmb2 = findViewById(R.id.cmb2);
+        cmb2 = findViewById(R.id.cmb2);//cmb2 seleccionar obra
         textView2 = findViewById(R.id.textView2);
-        cmb3 = findViewById(R.id.cmb3);
+        cmb3 = findViewById(R.id.cmb3);//cmb3 seleccionar lugar
         textView3 = findViewById(R.id.textView3);
 
         txt1 = findViewById(R.id.txt1);//numero de colaborador
 
-        cmb4 = findViewById(R.id.cmb4);
+        cmb4 = findViewById(R.id.cmb4);//cmb4 tipo colaborador
         textView5 = findViewById(R.id.textView5);
 
         btnIngresar = findViewById(R.id.btnIngresar);

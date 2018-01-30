@@ -17,7 +17,7 @@ public class ModTipoColaborador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_tipo_colaborador);
 
-        txt1 = findViewById(R.id.txt1);
+        txt1 = findViewById(R.id.txt1);//tipo colaborador
 
         btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar
         btnListar = findViewById(R.id.btnListar);//boton listar
