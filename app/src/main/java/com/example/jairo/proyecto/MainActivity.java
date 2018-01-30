@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        s1 = (Spinner)findViewById(R.id.spinner1);
-        s2 = (Spinner)findViewById(R.id.spinner2);
+        s1 = findViewById(R.id.spinner1);
+        s2 = findViewById(R.id.spinner2);
         s1.setOnItemSelectedListener(this);
 
 
