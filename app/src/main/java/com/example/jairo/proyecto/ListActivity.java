@@ -33,7 +33,23 @@ public class ListActivity extends AppCompatActivity {
         myData.bringToFront();
         switch (LISTARDATOSDE){
             case "ModBeneficiario":
-
+                int i=0;
+                for( i= 0; i < 3; i++){
+                    //crea la fila
+                    TableRow tr =  new TableRow(this);
+                    //obtener los datos de la BASE
+                    TextView c1 = new TextView(this);
+                    c1.setText(LISTARDATOSDE);
+                    TextView c2 = new TextView(this);
+                    c2.setText("dos "+i);
+                    TextView c3 = new TextView(this);
+                    c3.setText("tres "+i);
+                    //agregar los datos en la tabla
+                    tr.addView(c1);
+                    tr.addView(c2);
+                    tr.addView(c3);
+                    myData.addView(tr);
+                }
                 break;
             case "Mod_CasaSalesiana":
 
@@ -54,23 +70,7 @@ public class ListActivity extends AppCompatActivity {
 
                     break;
         }
-        int i=0;
-        for( i= 0; i < 3; i++){
-            //crea la fila
-            TableRow tr =  new TableRow(this);
-            //obtener los datos de la BASE
-            TextView c1 = new TextView(this);
-            c1.setText(LISTARDATOSDE);
-            TextView c2 = new TextView(this);
-            c2.setText("dos "+i);
-            TextView c3 = new TextView(this);
-            c3.setText("tres "+i);
-            //agregar los datos en la tabla
-            tr.addView(c1);
-            tr.addView(c2);
-            tr.addView(c3);
-            myData.addView(tr);
-        }
+
 
     }
 }
