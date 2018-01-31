@@ -76,10 +76,12 @@ public class ListActivity extends AppCompatActivity {
                 tarea3.execute();
                 break;
             case "ModLugar":
-
+                TareaListaLugares tarea4 = new TareaListaLugares();
+                tarea4.execute();
                 break;
             case "ModObraSalesiana":
-
+                TareaListaObraSalesiana tarea5 = new TareaListaObraSalesiana();
+                tarea5.execute();
                 break;
             case "ModTipoColaborador":
                 TareaListaTipoCol tarea = new TareaListaTipoCol();
@@ -295,6 +297,100 @@ public class ListActivity extends AppCompatActivity {
                     c = objeto.getProperty(2).toString();
                     d = objeto.getProperty(3).toString();
                     strAum = strAum + a + "  " + b + "  " +c+ "  "+ d + "\n\n";
+                    System.out.println(strAum);
+                }
+                //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+                Intent intent = new Intent(ListActivity.this, Modulo1.class);
+                //Creamos la información a pasar entre actividades
+                Bundle b = new Bundle();
+                b.putString("PASO_NOMBRE", strAum);
+                //Añadimos la información al intent
+                intent.putExtras(b);
+                //Iniciamos la nueva actividad
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                resul = false;
+            }
+            return resul;
+        }
+    }//fin sub clase
+
+    private class TareaListaLugares extends AsyncTask<String, Integer, Boolean> {
+        String a,b,c,d;
+        protected Boolean doInBackground(String... params) {
+            boolean resul = true;
+
+            final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
+            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String METHOD_NAME = "listLugares";
+
+            SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            envelope.dotNet = true;
+            envelope.setOutputSoapObject(request);
+            HttpTransportSE transporte = new HttpTransportSE(URL);
+
+            try {
+                transporte.call(NAMESPACE + "/" + METHOD_NAME, envelope);
+                SoapObject resSoap = (SoapObject) envelope.bodyIn;
+                int x = resSoap.getPropertyCount();
+
+                for (int i = 0; i < x; i++) {
+                    SoapObject objeto = (SoapObject) resSoap.getProperty(i);
+                    a = objeto.getProperty(0).toString();
+                    b = objeto.getProperty(1).toString();
+                    c = objeto.getProperty(2).toString();
+                    d = objeto.getProperty(3).toString();
+                    strAum = strAum + a + "  " + b + "  " +c+ "  "+ d + "\n\n";
+                    System.out.println(strAum);
+                }
+                //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
+                Intent intent = new Intent(ListActivity.this, Modulo1.class);
+                //Creamos la información a pasar entre actividades
+                Bundle b = new Bundle();
+                b.putString("PASO_NOMBRE", strAum);
+                //Añadimos la información al intent
+                intent.putExtras(b);
+                //Iniciamos la nueva actividad
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                resul = false;
+            }
+            return resul;
+        }
+    }//fin sub clase
+
+
+    private class TareaListaObraSalesiana extends AsyncTask<String, Integer, Boolean> {
+        String a,b,c,d,e;
+        protected Boolean doInBackground(String... params) {
+            boolean resul = true;
+
+            final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
+            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String METHOD_NAME = "listObras";
+
+            SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            envelope.dotNet = true;
+            envelope.setOutputSoapObject(request);
+            HttpTransportSE transporte = new HttpTransportSE(URL);
+
+            try {
+                transporte.call(NAMESPACE + "/" + METHOD_NAME, envelope);
+                SoapObject resSoap = (SoapObject) envelope.bodyIn;
+                int x = resSoap.getPropertyCount();
+
+                for (int i = 0; i < x; i++) {
+                    SoapObject objeto = (SoapObject) resSoap.getProperty(i);
+                    a = objeto.getProperty(0).toString();
+                    b = objeto.getProperty(1).toString();
+                    c = objeto.getProperty(2).toString();
+                    d = objeto.getProperty(3).toString();
+                    e = objeto.getProperty(4).toString();
+                    strAum = strAum + a + "  " + b + "  " +c+ "  "+ d + " "+ e +"\n\n";
                     System.out.println(strAum);
                 }
                 //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
