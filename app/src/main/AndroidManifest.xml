@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jairo.proyecto">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,7 +31,7 @@
         <activity android:name=".ModLugar" />
         <activity android:name=".ModObraSalesiana" />
         <activity android:name=".ModTipoColaborador" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".ListActivity" />
     </application>
 
 </manifest>

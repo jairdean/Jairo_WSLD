@@ -65,4 +65,7 @@
     <!-- para Modulo Tipo colaborador -->
     <string name="descTipoColab">descripcion tipo colaborador</string>
 
+
+
+    <string name="cargando">Cargando...</string>
 </resources>
