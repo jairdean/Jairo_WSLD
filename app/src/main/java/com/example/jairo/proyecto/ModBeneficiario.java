@@ -12,13 +12,21 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+
 public class ModBeneficiario extends AppCompatActivity{
 
     private TextView lblMensaje,textView1,textView2,textView3;
     private Spinner cmbOpciones,cmb1,cmb2,cmb3;
     private EditText txt1,txt2;
     private Button btnIngresar,btnListar;
-
+    HashMap<Integer,String> hmDatosCasa= new HashMap<>();
+    String[] vecCasa=new String[30];
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,19 @@ public class ModBeneficiario extends AppCompatActivity{
 
        btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar
        btnListar = findViewById(R.id.btnListar);//boton listar
+
+
+       sqlThread.start();
+
+
+
+
+       ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
+       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       cmb1.setAdapter(adapter);
+
+
+
 
         //esta es la lista que se obtendira de la base
         final String[] datos =
@@ -95,6 +116,35 @@ public class ModBeneficiario extends AppCompatActivity{
            }
        });
     }//end ON CREATE
+
+    Thread sqlThread = new Thread() {
+        public void run() {
+            try {
+                Class.forName("org.postgresql.Driver");
+                // "jdbc:postgresql://IP:PUERTO/DB", "USER", "PASSWORD");
+                // Si estás utilizando el emulador de android y tenes el PostgreSQL en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
+                Connection conn = DriverManager.getConnection(
+                        "jdbc:postgresql://192.168.100.196:5432/20150820", "postgres", "postgres");
+                //En el stsql se puede agregar cualquier consulta SQL deseada.
+                String stsql = "Select * from tb_casasalesiana";
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(stsql);
+                int i=0;
+                while(rs.next()){
+                    hmDatosCasa.put(rs.getInt(1),rs.getString(2));
+                    vecCasa[i]=rs.getString(2);
+                    i++;
+                }
+
+
+                conn.close();
+            } catch (SQLException se) {
+                System.out.println("oops! No se puede conectar. Error: " + se.toString());
+            } catch (ClassNotFoundException e) {
+                System.out.println("oops! No se encuentra la clase. Error: " + e.getMessage());
+            }
+        }
+    };
 
 
 private void invocar_lista(){
