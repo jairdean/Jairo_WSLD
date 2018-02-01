@@ -36,7 +36,7 @@ public class ModBeneficiario extends AppCompatActivity{
     HashMap<Integer,String> hmDatosCasa;
     ArrayList<String> vecCasa=new ArrayList<>();
     ResultSet rs=null;
-    String IPaqui="192.168.100.171";
+    String IPaqui="172.16.24.19";
     String obtenertxt1,obtenertxt2,obtenercmb3;
 
    @Override

@@ -14,7 +14,7 @@ public class ModColaborador extends AppCompatActivity {
     private Button btnIngresar,btnListar;
     private Spinner cmb1,cmb2,cmb3,cmb4;
     private TextView textView1,textView2,textView3,textView5;
-    String IPaqui="192.168.100.171";
+    String IPaqui="172.16.24.19",obtentxt1,obtencmb3,obtencmb4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +22,12 @@ public class ModColaborador extends AppCompatActivity {
         setContentView(R.layout.activity_mod_colaborador);
 
         //hago una instancia a todas las variables que se crean en la VISTA
+       /*
         cmb1 = findViewById(R.id.cmb1);//cmb1 seleccionar casa
         textView1 = findViewById(R.id.textView1);
         cmb2 = findViewById(R.id.cmb2);//cmb2 seleccionar obra
         textView2 = findViewById(R.id.textView2);
+        */
         cmb3 = findViewById(R.id.cmb3);//cmb3 seleccionar lugar
         textView3 = findViewById(R.id.textView3);
 

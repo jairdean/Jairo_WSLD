@@ -18,7 +18,7 @@ public class Mod_CasaSalesiana extends AppCompatActivity {
 
     private EditText txt4,txt5,txt6,txt7,txt8,txt9;
     private Button btnIngresar,btnListar;
-    String IPaqui="192.168.100.171";
+    String IPaqui="172.16.24.19";
     String recibotxt4,recibotxt5,recibotxt6,recibotxt7,recibotxt8,recibotxt9;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

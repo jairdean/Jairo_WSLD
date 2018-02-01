@@ -18,7 +18,7 @@ public class ModTipoColaborador extends AppCompatActivity {
 
     private Button btnIngresar,btnListar;
     private EditText txt1;
-    String IPaqui="192.168.100.171",strAum,recibotxt1;
+    String IPaqui="172.16.24.19",strAum,recibotxt1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

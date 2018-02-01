@@ -15,7 +15,7 @@ public class ModLugar extends AppCompatActivity {
     private EditText txt1,txt2,txt3,txt4,txt5;
     private TextView textView1,textView2;
     private Button btnListar,btnIngresar;
-    String IPaqui="192.168.100.171";
+    String IPaqui="172.16.24.19";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
