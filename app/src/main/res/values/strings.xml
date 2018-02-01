@@ -68,4 +68,6 @@
 
 
     <string name="cargando">Cargando...</string>
+
+    <string name="iralmain">main</string>
 </resources>

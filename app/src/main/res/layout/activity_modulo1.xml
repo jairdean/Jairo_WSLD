@@ -10,11 +10,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
+
+
+        <TextView
         android:id="@+id/txtSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="" />
+
+        <Button
+            android:id="@+id/btnvueltaMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iralmain" />
 
 </LinearLayout>
 </ScrollView>
