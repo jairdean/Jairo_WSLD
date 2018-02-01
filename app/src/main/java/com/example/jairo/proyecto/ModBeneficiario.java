@@ -25,13 +25,16 @@ public class ModBeneficiario extends AppCompatActivity{
     private Spinner cmbOpciones,cmb1,cmb2,cmb3;
     private EditText txt1,txt2;
     private Button btnIngresar,btnListar;
-    HashMap<Integer,String> hmDatosCasa= new HashMap<>();
-    String[] vecCasa=new String[30];
-
+    HashMap<Integer,String> hmDatosCasa;
+    String[] vecCasa=new String[31];
+    ResultSet rs=null;
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_beneficiario);
+       hmDatosCasa= new HashMap<>();
+       vecCasa=new String[31];
+       rs=null;
 
        cmbOpciones = findViewById(R.id.CmbOpciones);
         lblMensaje = findViewById(R.id.LblMensaje);
@@ -53,17 +56,18 @@ public class ModBeneficiario extends AppCompatActivity{
 
 
        sqlThread.start();
-
-
-
-
+       try {
+           sqlThread.join();
+       }catch(Exception e){
+            e.printStackTrace();
+       }
        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
        cmb1.setAdapter(adapter);
 
 
 
-
+/*
         //esta es la lista que se obtendira de la base
         final String[] datos =
                 new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
@@ -93,7 +97,7 @@ public class ModBeneficiario extends AppCompatActivity{
                    }
                });
 
-
+*/
        //Implementamos el evento click del botón
        //boton ingresar
        btnIngresar.setOnClickListener(new View.OnClickListener() {
@@ -119,29 +123,39 @@ public class ModBeneficiario extends AppCompatActivity{
 
     Thread sqlThread = new Thread() {
         public void run() {
+            Connection conn=null;
             try {
                 Class.forName("org.postgresql.Driver");
                 // "jdbc:postgresql://IP:PUERTO/DB", "USER", "PASSWORD");
                 // Si estás utilizando el emulador de android y tenes el PostgreSQL en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
-                Connection conn = DriverManager.getConnection(
+                conn = DriverManager.getConnection(
                         "jdbc:postgresql://192.168.100.196:5432/20150820", "postgres", "postgres");
                 //En el stsql se puede agregar cualquier consulta SQL deseada.
                 String stsql = "Select * from tb_casasalesiana";
                 Statement st = conn.createStatement();
-                ResultSet rs = st.executeQuery(stsql);
+                rs = st.executeQuery(stsql);
+
                 int i=0;
-                while(rs.next()){
-                    hmDatosCasa.put(rs.getInt(1),rs.getString(2));
-                    vecCasa[i]=rs.getString(2);
-                    i++;
+                try {
+
+                    while(rs.next()){
+                        hmDatosCasa.put(rs.getInt(1),rs.getString(2));
+                        vecCasa[i]=rs.getString(2);
+                        i++;
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
 
+            } catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                try {
+                    conn.close();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
 
-                conn.close();
-            } catch (SQLException se) {
-                System.out.println("oops! No se puede conectar. Error: " + se.toString());
-            } catch (ClassNotFoundException e) {
-                System.out.println("oops! No se encuentra la clase. Error: " + e.getMessage());
             }
         }
     };
