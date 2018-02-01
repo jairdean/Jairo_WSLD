@@ -36,6 +36,8 @@ public class ModBeneficiario extends AppCompatActivity{
     String[] vecCasa=new String[31];
     ResultSet rs=null;
     String IPaqui="192.168.100.171";
+    String obtenertxt1,obtenertxt2,obtenercmb3;
+
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +115,10 @@ public class ModBeneficiario extends AppCompatActivity{
            @Override
            public void onClick(View v) {
                //aqui se pone la accion que haria el boton.
+               obtenertxt1=txt1.getText().toString();
+               obtenertxt2=txt2.getText().toString();
+               //obtenercmb3
+
                TareaBeneficiario llamada= new TareaBeneficiario();
                llamada.execute();
 
@@ -194,10 +200,12 @@ private void invocar_lista(){
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 
-                /*
-            request.addProperty("descripcion",recibotxt1);
-            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+recibotxt1);
-*/
+
+            request.addProperty("descripcion",obtenertxt1);
+            request.addProperty("numero_ben",obtenertxt2);
+            request.addProperty("id_lug",cmb3);
+
+
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.dotNet = false;
             envelope.setOutputSoapObject(request);
