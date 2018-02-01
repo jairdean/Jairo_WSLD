@@ -44,8 +44,10 @@ public class ModBeneficiario extends AppCompatActivity{
        vecCasa=new String[31];
        rs=null;
 
+       /*
        cmbOpciones = findViewById(R.id.CmbOpciones);
         lblMensaje = findViewById(R.id.LblMensaje);
+        */
 
         cmb1 = findViewById(R.id.cmb1);//id casa
        textView1 = findViewById(R.id.textView1);
@@ -61,7 +63,7 @@ public class ModBeneficiario extends AppCompatActivity{
 
        btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar
        btnListar = findViewById(R.id.btnListar);//boton listar
-
+/*
         for (int i=1;i<=24;i++){
             hmDatosCasa.put(i,String.valueOf(i));
             vecCasa[i]=String.valueOf(i);
@@ -72,7 +74,7 @@ public class ModBeneficiario extends AppCompatActivity{
        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
        cmb1.setAdapter(adapter);
 
-
+*/
 
 /*
         //esta es la lista que se obtendira de la base

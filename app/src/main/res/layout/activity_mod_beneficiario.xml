@@ -15,7 +15,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+<!--
     <Spinner
         android:id="@+id/CmbOpciones"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_column="0"
         android:layout_row="1"
         android:ems="10"/>
-
+-->
     <!-- SPINNER 1 -->
     <Spinner
         android:id="@+id/cmb1"
