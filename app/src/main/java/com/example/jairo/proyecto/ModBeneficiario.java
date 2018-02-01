@@ -24,6 +24,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ModBeneficiario extends AppCompatActivity{
@@ -33,7 +34,7 @@ public class ModBeneficiario extends AppCompatActivity{
     private EditText txt1,txt2;
     private Button btnIngresar,btnListar;
     HashMap<Integer,String> hmDatosCasa;
-    String[] vecCasa=new String[31];
+    ArrayList<String> vecCasa=new ArrayList<>();
     ResultSet rs=null;
     String IPaqui="192.168.100.171";
     String obtenertxt1,obtenertxt2,obtenercmb3;
@@ -43,7 +44,6 @@ public class ModBeneficiario extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_beneficiario);
        hmDatosCasa= new HashMap<>();
-       vecCasa=new String[31];
        rs=null;
 
        /*
@@ -72,11 +72,20 @@ public class ModBeneficiario extends AppCompatActivity{
 
         }
 
-       ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
-       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       cmb1.setAdapter(adapter);
+
 
 */
+
+        sqlThread.start();
+        try {
+            sqlThread.join();
+        }catch (Exception e){
+
+        }
+
+       ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
+       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       cmb3.setAdapter(adapter);
 
 /*
         //esta es la lista que se obtendira de la base
@@ -117,8 +126,8 @@ public class ModBeneficiario extends AppCompatActivity{
                //aqui se pone la accion que haria el boton.
                obtenertxt1=txt1.getText().toString();
                obtenertxt2=txt2.getText().toString();
-               //obtenercmb3
-
+               String indice=cmb3.getSelectedItem().toString();
+               obtenercmb3 = hmDatosCasa.get(cmb3.getSelectedItemPosition());
                TareaBeneficiario llamada= new TareaBeneficiario();
                llamada.execute();
 
@@ -147,7 +156,7 @@ public class ModBeneficiario extends AppCompatActivity{
                 conn = DriverManager.getConnection(
                         "jdbc:postgresql://192.168.100.196:5432/20150820", "postgres", "postgres");
                 //En el stsql se puede agregar cualquier consulta SQL deseada.
-                String stsql = "Select * from tb_casasalesiana";
+                String stsql = "Select * from tb_lugar";
                 Statement st = conn.createStatement();
                 rs = st.executeQuery(stsql);
 
@@ -155,8 +164,8 @@ public class ModBeneficiario extends AppCompatActivity{
                 try {
 
                     while(rs.next()){
-                        hmDatosCasa.put(rs.getInt(1),rs.getString(2));
-                        vecCasa[i]=rs.getString(2);
+                        hmDatosCasa.put(i,String.valueOf(rs.getInt(1)));
+                        vecCasa.add(rs.getString(4));
                         i++;
                     }
                 }catch (Exception e){
@@ -196,14 +205,14 @@ private void invocar_lista(){
             boolean resul = true;
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
             final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
-            final String METHOD_NAME = "insertarTipoColaborador";
+            final String METHOD_NAME = "insertarBeneficiario";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 
 
             request.addProperty("descripcion",obtenertxt1);
             request.addProperty("numero_ben",obtenertxt2);
-            request.addProperty("id_lug",cmb3);
+            request.addProperty("id_lug",obtenercmb3);
 
 
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
