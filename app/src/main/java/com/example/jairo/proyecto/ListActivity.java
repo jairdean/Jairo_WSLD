@@ -16,7 +16,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 public class ListActivity extends AppCompatActivity {
      String LISTARDATOSDE,strAum;
-String IPaqui="172.16.24.19";
+String IPaqui="192.168.100.171";
     TableLayout myData;
     TableRow tr;
     TextView c1,c2,c3;
