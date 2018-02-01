@@ -16,7 +16,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 public class ListActivity extends AppCompatActivity {
      String LISTARDATOSDE,strAum;
-
+String IPaqui="172.16.24.19";
     TableLayout myData;
     TableRow tr;
     TextView c1,c2,c3;
@@ -108,7 +108,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listTipoColaborador";
 
 
@@ -183,7 +183,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listBeneficiarios";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -229,7 +229,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listCasaSalesiana";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -276,7 +276,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listColaboradores";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -322,7 +322,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listLugares";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -369,7 +369,7 @@ public class ListActivity extends AppCompatActivity {
             boolean resul = true;
 
             final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
-            final String URL = "http://172.16.24.19:8080/WSDLandroid/proceso_wc";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
             final String METHOD_NAME = "listObras";
 
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
