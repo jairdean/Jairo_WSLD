@@ -37,6 +37,7 @@ public class ModBeneficiario extends AppCompatActivity{
     ArrayList<String> vecCasa=new ArrayList<>();
     ResultSet rs=null;
     String IPaqui="172.16.24.19";
+    String IPdeBASEDATOS="172.16.24.17";
     String obtenertxt1,obtenertxt2,obtenercmb3;
 
    @Override
@@ -154,7 +155,7 @@ public class ModBeneficiario extends AppCompatActivity{
                 // "jdbc:postgresql://IP:PUERTO/DB", "USER", "PASSWORD");
                 // Si estás utilizando el emulador de android y tenes el PostgreSQL en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
                 conn = DriverManager.getConnection(
-                        "jdbc:postgresql://192.168.100.196:5432/20150820", "postgres", "postgres");
+                        "jdbc:postgresql://"+IPdeBASEDATOS+":5432/20150820", "postgres", "postgres");
                 //En el stsql se puede agregar cualquier consulta SQL deseada.
                 String stsql = "Select * from tb_lugar";
                 Statement st = conn.createStatement();
