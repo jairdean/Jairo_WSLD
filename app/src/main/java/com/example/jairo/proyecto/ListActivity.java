@@ -294,8 +294,8 @@ String IPaqui="172.16.24.19";
                     SoapObject objeto = (SoapObject) resSoap.getProperty(i);
                     a = objeto.getProperty(0).toString();
                     b = objeto.getProperty(1).toString();
-                    c = objeto.getProperty(2).toString();
-                    d = objeto.getProperty(3).toString();
+                    c = objeto.getProperty(7).toString();
+                    d = objeto.getProperty(8).toString();
                     strAum = strAum + a + "  " + b + "  " +c+ "  "+ d + "\n\n";
                     System.out.println(strAum);
                 }
