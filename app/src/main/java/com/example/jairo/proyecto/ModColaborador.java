@@ -35,13 +35,16 @@ public class ModColaborador extends AppCompatActivity {
     //para cmb3
     ResultSet rs=null;
     HashMap<Integer,String> hmDatosCasa;
+    HashMap<Integer,String> hmDatosJairo;
     ArrayList<String> vecCasa=new ArrayList<>();
+    ArrayList<String> vecJairo=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mod_colaborador);
         hmDatosCasa= new HashMap<>();
+        hmDatosJairo= new HashMap<>();
         rs=null;
 
         //hago una instancia a todas las variables que se crean en la VISTA
@@ -68,13 +71,26 @@ public class ModColaborador extends AppCompatActivity {
         }catch (Exception e){
 
         }
-
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cmb3.setAdapter(adapter);
 
+        /*
+        sqlThreadJairo.start();
+        try {
+            sqlThreadJairo.join();
+        }catch (Exception e){
 
-          //Implementamos el evento click del botón INGRESAR
+        }
+        */
+        ArrayAdapter<String> adapter4 =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecJairo);
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cmb4.setAdapter(adapter4);
+
+
+
+
+        //Implementamos el evento click del botón INGRESAR
         //BOTON INGRESAR
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +98,7 @@ public class ModColaborador extends AppCompatActivity {
                 //AQUI VA EL CODIGO PARA INGRESAR LA INFORMACION
                 obtencmb3 = hmDatosCasa.get(cmb3.getSelectedItemPosition());
                 obtentxt1 =txt1.getText().toString();
-                //obtencmb4
+                obtencmb4= hmDatosJairo.get(cmb4.getSelectedItemPosition());
 
                 TareaColaborador llamada= new TareaColaborador();
                 llamada.execute();
@@ -125,6 +141,7 @@ public class ModColaborador extends AppCompatActivity {
                         vecCasa.add(rs.getString(4));
                         i++;
                     }
+                    rs=null;
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -139,8 +156,48 @@ public class ModColaborador extends AppCompatActivity {
                 }
 
             }
+            //jairo
+            try {
+                Class.forName("org.postgresql.Driver");
+                // "jdbc:postgresql://IP:PUERTO/DB", "USER", "PASSWORD");
+                // Si estás utilizando el emulador de android y tenes el PostgreSQL en tu misma PC no utilizar 127.0.0.1 o localhost como IP, utilizar 10.0.2.2
+                conn = DriverManager.getConnection(
+                        "jdbc:postgresql://"+IPdeBASEDATOS+":5432/20150820", "postgres", "postgres");
+                //En el stsql se puede agregar cualquier consulta SQL deseada.
+                String stsql = "Select * from tb_tipocolaborador";
+                Statement st = conn.createStatement();
+                rs = st.executeQuery(stsql);
+
+                int i=0;
+                try {
+
+                    while(rs.next()){
+                        hmDatosJairo.put(i,String.valueOf(rs.getInt(1)));
+                        vecJairo.add(rs.getString(2));
+                        i++;
+                    }
+                    rs=null;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }finally {
+                try {
+                    conn.close();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+
+
         }
     };
+
+
+
     private void invocar_lista(){
         //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
         Intent intent = new Intent(ModColaborador.this, ListActivity.class);
@@ -166,7 +223,7 @@ public class ModColaborador extends AppCompatActivity {
 
             request.addProperty("idlug",obtencmb3);
             request.addProperty("cantcolabob",obtentxt1);
-            request.addProperty("idTipoCol",1);
+            request.addProperty("idTipoCol",obtencmb4);
 
 
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
