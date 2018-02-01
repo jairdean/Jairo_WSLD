@@ -15,6 +15,7 @@ public class ModObraSalesiana extends AppCompatActivity {
     private Spinner cmb1,cmb2;
     private EditText txt1,txt2,txt3,txt4,txt5,txt6,txt7;
     private TextView textView1,textView2;
+    String IPaqui="192.168.100.171";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

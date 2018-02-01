@@ -1,6 +1,7 @@
 package com.example.jairo.proyecto;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,6 +35,7 @@ public class ModBeneficiario extends AppCompatActivity{
     HashMap<Integer,String> hmDatosCasa;
     String[] vecCasa=new String[31];
     ResultSet rs=null;
+    String IPaqui="192.168.100.171";
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,13 +62,12 @@ public class ModBeneficiario extends AppCompatActivity{
        btnIngresar = findViewById(R.id.btnIngresar);//boton ingresar
        btnListar = findViewById(R.id.btnListar);//boton listar
 
+        for (int i=1;i<=24;i++){
+            hmDatosCasa.put(i,String.valueOf(i));
+            vecCasa[i]=String.valueOf(i);
 
-       sqlThread.start();
-       try {
-           sqlThread.join();
-       }catch(Exception e){
-            e.printStackTrace();
-       }
+        }
+
        ArrayAdapter<String> adapter =new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, vecCasa);
        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
        cmb1.setAdapter(adapter);
@@ -104,7 +111,8 @@ public class ModBeneficiario extends AppCompatActivity{
            @Override
            public void onClick(View v) {
                //aqui se pone la accion que haria el boton.
-
+               TareaBeneficiario llamada= new TareaBeneficiario();
+               llamada.execute();
 
                //este de ley va al final porque se llama a la lista para ver el nuevo dato ingresado
                invocar_lista();
@@ -175,6 +183,37 @@ private void invocar_lista(){
 }
 
 
+    private class TareaBeneficiario extends AsyncTask<String, Integer, Boolean> {
+        protected Boolean doInBackground(String... params) {
+            boolean resul = true;
+            final String NAMESPACE = "http://xmlns.jj.com/services/v1/ups";
+            final String URL = "http://"+IPaqui+":8080/WSDLandroid/proceso_wc";
+            final String METHOD_NAME = "insertarTipoColaborador";
 
+            SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
+
+                /*
+            request.addProperty("descripcion",recibotxt1);
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+recibotxt1);
+*/
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            envelope.dotNet = false;
+            envelope.setOutputSoapObject(request);
+            HttpTransportSE transporte = new HttpTransportSE(URL);
+
+            try {
+                transporte.call(NAMESPACE + "/" + METHOD_NAME, envelope);
+                SoapPrimitive resultado_xml= (SoapPrimitive) envelope.getResponse();
+                String res=resultado_xml.toString();
+                if(!res.equals(1)){
+                    resul=false;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                resul = false;
+            }
+            return resul;
+        }
+    }//fin sub clase
 
 }

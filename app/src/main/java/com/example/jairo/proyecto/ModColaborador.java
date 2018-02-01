@@ -14,6 +14,7 @@ public class ModColaborador extends AppCompatActivity {
     private Button btnIngresar,btnListar;
     private Spinner cmb1,cmb2,cmb3,cmb4;
     private TextView textView1,textView2,textView3,textView5;
+    String IPaqui="192.168.100.171";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

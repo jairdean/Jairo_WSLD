@@ -70,6 +70,7 @@
     <string name="cargando">Cargando...</string>
 
     <string name="iralmain">main</string>
+    <string name="correo">correo electronico</string>
     <string name="ponerIPdelNetBeans">172.16.24.19</string>
 
 </resources>
