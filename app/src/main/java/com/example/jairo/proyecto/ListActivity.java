@@ -295,7 +295,7 @@ String IPaqui="172.16.24.19";
                     a = objeto.getProperty(0).toString();
                     c = objeto.getProperty(7).toString();
                     d = objeto.getProperty(8).toString();
-                    strAum = strAum + a + " " +c+ "  "+ d + "\n\n";
+                    strAum = strAum + a + "  " +c+ "  "+ d + "\n\n";
                     System.out.println(strAum);
                 }
                 //Creamos el Intent la comunicación entre los distintos componentes y aplicaciones en Android se realiza mediante intents
